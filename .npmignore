@@ -30,3 +30,5 @@ nodemon.json
 .gitattributes
 .eslintrc.js
 .cmmv.config.js
+.cmmv.config.cjs
+.cmmv.config.mjs

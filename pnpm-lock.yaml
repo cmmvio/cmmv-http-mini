@@ -18,6 +18,9 @@ importers:
       '@cmmv/cli':
         specifier: ^0.5.7
         version: 0.5.7(@swc/types@0.1.17)(@types/node@22.13.4)(conventional-commits-filter@5.0.0)(eslint@9.20.1(jiti@2.4.2))
+      '@cmmv/inspector':
+        specifier: ^0.1.7
+        version: 0.1.7
       '@cmmv/testing':
         specifier: ^0.8.18
         version: 0.8.18
@@ -76,8 +79,15 @@ packages:
     engines: {node: '>=16.14'}
     hasBin: true
 
+  '@cmmv/core@0.5.11':
+    resolution: {integrity: sha512-jhhhpNztJSoSuXUuQEJtv0N08iaeoHypsTy38yOSa0NUxTW/t5MGwB/Xud/vlxph9ZwEBe3Eo7rgWvpfgdO/nA==}
+
   '@cmmv/core@0.8.18':
     resolution: {integrity: sha512-E0DUHvaUm6ba4D5RIgvEluMNDbDx4j6Nc66ULvatTY8nct5HlNqIeLvVJeFFGh7CEGZIzqdLb/dPyI85gPHJUw==}
+
+  '@cmmv/inspector@0.1.7':
+    resolution: {integrity: sha512-ynd/QNh8Dpq+2D5gngnFCChxQoyAFcZa7JlnbpeRDPu2Ywbr4DGDeJ+/b5gxDvNtwc7gkW/ezGljIuTbAtv7xQ==}
+    engines: {node: '>= 18.18.0 || >= 20.0.0'}
 
   '@cmmv/testing@0.8.18':
     resolution: {integrity: sha512-a6tgvZosIEdtAkfLwYDOt6br0xWTntzLuidREmwXLekEwjK6XiGVzpmlPIoE1mppm1e1I9w1pRAwU3aRi9lsUA==}
@@ -3107,6 +3117,18 @@ snapshots:
       - eslint
       - supports-color
 
+  '@cmmv/core@0.5.11':
+    dependencies:
+      class-transformer: 0.5.1
+      class-validator: 0.14.1
+      fast-glob: 3.3.3
+      fast-json-stringify: 6.0.1
+      reflect-metadata: 0.2.2
+      rxjs: 7.8.1
+      terser: 5.39.0
+      uglify-js: 3.19.3
+      uuid: 10.0.0
+
   '@cmmv/core@0.8.18':
     dependencies:
       class-transformer: 0.5.1
@@ -3118,6 +3140,10 @@ snapshots:
       terser: 5.39.0
       uglify-js: 3.19.3
       uuid: 10.0.0
+
+  '@cmmv/inspector@0.1.7':
+    dependencies:
+      '@cmmv/core': 0.5.11
 
   '@cmmv/testing@0.8.18':
     dependencies:

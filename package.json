@@ -34,6 +34,7 @@
     },
     "devDependencies": {
         "@cmmv/cli": "^0.5.7",
+        "@cmmv/inspector": "^0.1.7",
         "@cmmv/testing": "^0.8.18",
         "@commitlint/cli": "^19.7.1",
         "@commitlint/config-angular": "^19.7.1",
