@@ -1,3 +1,19 @@
+## [0.0.7](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.6...v0.0.7) (2025-02-17)
+
+
+### Bug Fixes
+
+* request, response ([240d6ed](https://github.com/cmmvio/cmmv-http-mini/commit/240d6ed64d4af9bf5c717f99e559fe5156dbf12d))
+* request, response ([5bd9912](https://github.com/cmmvio/cmmv-http-mini/commit/5bd9912891385284a7151cb234679f7fbfc04886))
+* vulnerability ([91e9a1f](https://github.com/cmmvio/cmmv-http-mini/commit/91e9a1f2ab4f5fe4a168d0a8c97edb36fd875501))
+
+
+### Features
+
+* include inspector ([78dfc79](https://github.com/cmmvio/cmmv-http-mini/commit/78dfc79e0719c3e7a79e3903f833cc426b2a08e3))
+
+
+
 ## [0.0.6](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.5...v0.0.6) (2025-02-17)
 
 
