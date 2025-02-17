@@ -12,10 +12,12 @@ tslint.json
 tsconfig.json
 tsconfig.cjs.json
 tsconfig.esm.json
+tsconfig.spec.json
 .prettierrc
 yarn.lock
 pnpm-lock.yaml
 eslint.config.cjs
+nodemon.json
 
 *.tsbuildinfo
 .husky
@@ -25,3 +27,6 @@ eslint.config.cjs
 .prettierignore
 .editorconfig
 .commitlintrc.json
+.gitattributes
+.eslintrc.js
+.cmmv.config.js
