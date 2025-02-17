@@ -6,16 +6,24 @@ import { HttpMini } from './application';
 export const Request = {
   context: null,
   raw: null,
-  params: null,
-  searchParams: null,
-  headersMap: Object.create(null),
+  params: {},
+  searchParams: {},
+  headersMap: {},
 
   get method() {
     return this.raw.method!;
   },
 
+  flush() {
+    this.context = null;
+    this.raw = null;
+    this.params = {};
+    this.searchParams = {};
+    this.headersMap = {};
+  },
+
   headers(header: string): string | string[] | undefined {
-    return this.headersMap[header.toLowerCase()];
+    return this.raw.headers[header.toLowerCase()];
   },
 
   param(paramName: string): string | undefined {
@@ -34,11 +42,5 @@ export default (
   newRequest.raw = raw;
   newRequest.params = params;
   newRequest.searchParams = searchParams;
-
-  for (const key in raw.headers) {
-    if (Object.prototype.hasOwnProperty.call(raw.headers, key))
-      newRequest.headersMap[key.toLowerCase()] = raw.headers[key];
-  }
-
   return newRequest;
 };

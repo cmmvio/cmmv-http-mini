@@ -8,6 +8,17 @@ export const Response = {
   req: null,
   headers: {},
 
+  flush() {
+    this.statusCode = 200;
+    this.contentType = null;
+    this.lastModified = new Date().toUTCString();
+    this.sent = false;
+    this.context = null;
+    this.raw = null;
+    this.req = null;
+    this.headers = {};
+  },
+
   status(code: number) {
     this.statusCode = code;
     return this;

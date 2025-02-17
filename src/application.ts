@@ -6,6 +6,7 @@ import * as https from 'node:https';
 import * as http2 from 'node:http2';
 import FindMyWay from 'find-my-way';
 
+import { Pooling } from './pooling';
 import Request from './request';
 import Response from './response';
 
@@ -54,6 +55,7 @@ export class HttpMini extends EventEmitter {
     };
 
     this.createServer(serverOptions);
+    Pooling.init();
   }
 
   public option(name: string): any {
@@ -86,14 +88,21 @@ export class HttpMini extends EventEmitter {
     const startRequest = Date.now();
 
     if (route && route.handler) {
+      const { request, response, index } = Pooling.acquire(
+        this,
+        req,
+        res,
+        route.params,
+        route.searchParams,
+      );
+
       try {
-        const request = Request(this, req, route.params, route.searchParams);
-        const response = Response(this, res, request);
         const content = await route.handler.call(this, request, response);
 
         if (!response.sent) response.send(content);
 
         const endRequest = Date.now();
+        Pooling.release(index);
 
         this.printLog(
           'verbose',
@@ -104,6 +113,7 @@ export class HttpMini extends EventEmitter {
         );
       } catch (error) {
         const endRequest = Date.now();
+        Pooling.release(index);
 
         this.printLog(
           'error',
