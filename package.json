@@ -1,0 +1,55 @@
+{
+    "name": "cmmv-module",
+    "version": "0.0.2",
+    "description": "",
+    "author": "",
+    "keywords": [],
+    "main": "./dist/cjs/main.js",
+    "module": "./dist/esm/main.js",
+    "types": "./dist/types/main.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/main.js",
+            "require": "./dist/cjs/main.js"
+        }
+    },
+    "license": "UNLICENSED",
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">= 20.0.0"
+    },
+    "lint-staged": {
+        "**/*.ts": [
+            "prettier --ignore-path ./.prettierignore --write"
+        ]
+    },
+    "scripts": {
+        "build": "cmmv build",
+        "release": "cmmv release",
+        "lint": "cmmv lint",
+        "prepare": "husky",
+        "test": "vitest",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    },
+    "devDependencies": {
+        "@cmmv/cli": "^0.5.7",
+        "@cmmv/testing": "^0.8.18",
+        "@commitlint/cli": "^19.7.1",
+        "@commitlint/config-angular": "^19.7.1",
+        "@commitlint/config-conventional": "^19.7.1",
+        "@tsconfig/node22": "^22.0.0",
+        "@types/node": "^22.13.4",
+        "conventional-changelog": "^6.0.0",
+        "conventional-changelog-cli": "^5.0.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.4.3",
+        "tslib": "^2.8.1",
+        "typescript": "^5.7.3",
+        "vitest": "^3.0.5"
+    },
+    "dependencies": {
+        "@cmmv/core": "^0.8.18"
+    }
+}
