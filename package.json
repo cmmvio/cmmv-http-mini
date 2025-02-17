@@ -26,6 +26,7 @@
         ]
     },
     "scripts": {
+        "dev": "cmmv run ./src/sample.ts",
         "build": "cmmv build",
         "release": "cmmv release",
         "lint": "cmmv lint",
@@ -45,11 +46,13 @@
         "conventional-changelog-cli": "^5.0.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.4.3",
+        "supertest": "^7.0.0",
         "tslib": "^2.8.1",
         "typescript": "^5.7.3",
         "vitest": "^3.0.5"
     },
     "dependencies": {
-        "@cmmv/core": "^0.8.18"
+        "@cmmv/core": "^0.8.18",
+        "find-my-way": "^9.2.0"
     }
 }

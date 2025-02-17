@@ -1,9 +1,8 @@
-import { Module } from '@cmmv/core';
+import { HttpMini, ApplicationOptions, ServerOptions } from './application';
 
-import { ModuleConfig } from './module.config';
-import { ModuleService } from './module.service';
-
-export const CmmvModule = new Module('module', {
-  configs: [ModuleConfig],
-  providers: [ModuleService],
-});
+export default (
+  applicationOptions?: ApplicationOptions,
+  serverOptions?: ServerOptions,
+) => {
+  return new HttpMini(applicationOptions, serverOptions);
+};
