@@ -2,7 +2,6 @@ import { Inspector } from '@cmmv/inspector';
 import httpmini from './main';
 
 process.on('SIGINT', async () => {
-  console.log(Inspector.getInstance());
   await Inspector.stop();
   await Inspector.saveProfile('./profiles');
   process.exit(0);

@@ -1,7 +1,7 @@
 export const Response = {
   statusCode: 200,
   contentType: null,
-  lastModified: new Date().toUTCString(),
+  lastModified: null,
   sent: false,
   context: null,
   raw: null,
@@ -11,7 +11,7 @@ export const Response = {
   flush() {
     this.statusCode = 200;
     this.contentType = null;
-    this.lastModified = new Date().toUTCString();
+    this.lastModified = null;
     this.sent = false;
     this.context = null;
     this.raw = null;
@@ -80,16 +80,24 @@ export const Response = {
         ? JSON.stringify(this.req.body)
         : this.req.body || '');
 
-    const computedEtag = this.etag(contentSent);
+    if (this.req.headers('if-none-match') || this.context.option('etag')) {
+      const computedEtag = this.etag(contentSent);
 
-    if (this.req.headers('if-none-match') === computedEtag) {
-      this.raw.writeHead(304).end();
-      this.sent = true;
-      return;
+      if (this.req.headers('if-none-match') === computedEtag) {
+        this.raw.writeHead(304).end();
+        this.sent = true;
+        return;
+      }
+
+      if (this.context.option('etag')) this.headers['etag'] = computedEtag;
     }
 
     const ifModifiedSince = this.req.headers('if-modified-since');
-    if (ifModifiedSince && typeof ifModifiedSince === 'string') {
+    if (
+      this.lastModified &&
+      ifModifiedSince &&
+      typeof ifModifiedSince === 'string'
+    ) {
       const sinceDate = new Date(ifModifiedSince);
       if (sinceDate >= new Date(this.lastModified)) {
         this.raw.writeHead(304).end();
@@ -100,10 +108,10 @@ export const Response = {
 
     this.headers['content-type'] = this.contentType;
 
-    if (this.context.option('etag')) this.headers['etag'] = computedEtag;
-
     if (this.context.option('lastModified'))
-      this.headers['last-modified'] = this.lastModified;
+      this.headers['last-modified'] = this.lastModified
+        ? this.lastModified
+        : new Date().toUTCString();
 
     const contentBuffer = Buffer.from(contentSent);
     this.headers['content-length'] = contentBuffer.byteLength;
