@@ -1,11 +1,11 @@
 {
     "name": "@cmmv/http-mini",
     "version": "0.0.5",
-    "description": "",
-    "author": "",
-    "keywords": [],
+    "description": "Simplified HTTP Server",
+    "author": "Andre Ferreira",
+    "keywords": ["cmmv", "http", "http2", "mini"],
     "main": "./dist/main.js",
-    "license": "UNLICENSED",
+    "license": "MIT",
     "publishConfig": {
         "access": "public"
     },
