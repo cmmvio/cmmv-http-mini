@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.5...v0.0.6) (2025-02-17)
+
+
+### Features
+
+* complement package ([c719400](https://github.com/cmmvio/cmmv-http-mini/commit/c7194009b26a80270e7e431da252c4b864b90b84))
+
+
+
 ## [0.0.5](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.4...v0.0.5) (2025-02-17)
 
 
