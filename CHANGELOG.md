@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.4...v0.0.5) (2025-02-17)
+
+
+### Bug Fixes
+
+* name module ([e14afae](https://github.com/cmmvio/cmmv-http-mini/commit/e14afae1352b3eb6cabe8d2bb3a8e1a1f0549c4b))
+
+
+
 ## [0.0.4](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.3...v0.0.4) (2025-02-17)
 
 
