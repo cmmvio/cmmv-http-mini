@@ -1,3 +1,12 @@
+## [0.0.8](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.7...v0.0.8) (2025-02-17)
+
+
+### Bug Fixes
+
+* req, res type ([c30ef8b](https://github.com/cmmvio/cmmv-http-mini/commit/c30ef8b8fd3f9afe07ededb60a3c8775f1c50f1f))
+
+
+
 ## [0.0.7](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.6...v0.0.7) (2025-02-17)
 
 
