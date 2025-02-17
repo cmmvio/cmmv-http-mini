@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/cmmvio/cmmv-http-mini/compare/v0.0.3...v0.0.4) (2025-02-17)
+
+
+### Features
+
+* fixes to benchmark ([e20b43b](https://github.com/cmmvio/cmmv-http-mini/commit/e20b43b9f365bf412cb31c1529bef6aaad195796))
+
+
+
 ## 0.0.3 (2025-02-17)
 
 
