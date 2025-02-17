@@ -1,4 +1,4 @@
-import { Logger, Config } from '@cmmv/core';
+import { Logger } from '@cmmv/core';
 import { EventEmitter } from 'node:events';
 
 import * as http from 'node:http';
@@ -7,8 +7,6 @@ import * as http2 from 'node:http2';
 import FindMyWay from 'find-my-way';
 
 import { Pooling } from './pooling';
-import Request from './request';
-import Response from './response';
 
 const Router: typeof import('find-my-way') =
   process.env.NODE_ENV === 'test' ? FindMyWay : require('find-my-way');
@@ -22,7 +20,7 @@ type ServerType =
   | http2.Http2SecureServer;
 type ServerRequest = http.IncomingMessage | http2.Http2ServerRequest;
 type ServerResponse = http.ServerResponse | http2.Http2ServerResponse;
-type RouteHandler = (req: Request, res: Response) => void;
+type RouteHandler = (req: any, res: any) => void;
 
 export interface ApplicationOptions {
   debug?: boolean;
