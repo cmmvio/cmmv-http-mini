@@ -1,8 +1,9 @@
 import httpmini from './main';
 
 const app = httpmini({
-    debug: true,
-    etag: false
+    debug: false,
+    etag: false,
+    lastModified: false
 });
 
 app.get('/', (req, res) => {
